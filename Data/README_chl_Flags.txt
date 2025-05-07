@@ -1,0 +1,2 @@
+#Flags 1= good, no problems. 7= section length <10 cm. 8= section length >10 cm. 0 = special issues. In this case, the data is an outlier and the sample was <10 cm and was from a salinity sample melted at room temperature and without FSW.
+#6 had no FSW added and 5 had less than ideal FSW added.
