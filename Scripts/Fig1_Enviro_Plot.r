@@ -5,8 +5,8 @@ library(patchwork)
 library(cowplot)
 # MO_16S_Merged_MO_unrarified=readRDS("/Users/kyle/Library/CloudStorage/GoogleDrive-kbdilliplaine@alaska.edu/My Drive/01_MOSAIC/Data/Phyloseq_Objects/MO_16S_Merged_MO_unrarified.rds")
 
-Chl_avg=readRDS(file = 'G:/My Drive/01_MOSAIC/Enviro_New_Bottom10s_2024.RDS')
-Enviro_Chl=readRDS(file='G:/My Drive/01_MOSAIC/Github Scripts/Enviro_Chl.RDS')
+Chl_avg=readRDS(file = './Enviro_Bott_10s.RDS')
+Enviro_Chl=readRDS(file='./Enviro_Chl.RDS')
 
 #####################################################################################################
 # Seawater only
@@ -179,7 +179,6 @@ pivot_longer( cols=-c(DOY), names_to = "Variable", values_to = "Value")
 
 Disc=c("#26E8EB", "#3A4EC2", "#040291", "darkgray", "black")
 
-
     cols    <- c( "c1" = "Black", "c2" = "Black", "c3"="Black" )
     lines  <- c("l1" = 1, "l2" = 2, 'l3'=3)
 PAR_Snow=
@@ -189,9 +188,6 @@ PAR_Snow=
         geom_vline(xintercept=c(144), linetype=2, size=0.75)+
         stat_smooth(aes(DOY, PAR_B, color="c1", linetype="l1"), linewidth=0.75, se=F, span=0.65)+
         stat_smooth(aes(DOY, Snow_Depth*13.24503, color="c2", linetype="l2"), linewidth=0.75, se=F, span=0.65)+
-        # geom_point(aes(DOY, PAR_B, color="c1", shape="l1"), size=2.5)+
-        # geom_point(aes(DOY, Snow_Depth*13.24503, color="c2", shape="l2"), size=2.5)+
-        #stat_smooth(aes(DOY, phaeo_prop*3600), se=F, span=2,, color="#705E0E")+
         scale_y_continuous(
           name = expression(
             atop(
